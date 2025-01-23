@@ -15,8 +15,13 @@ class HomeViewModel : ViewModel() {
 
     fun getAnimeList(){
         viewModelScope.launch{
-            val result = NetworkClient.apiService.getAnimeList()
-            _animeList.postValue(result.data)
+            try {
+                val result = NetworkClient.apiService.getAnimeList()
+                _animeList.postValue(result.data)
+            }catch (e:Exception){
+                _animeList.postValue(emptyList())
+                println("something went wrong")
+            }
         }
     }
 }

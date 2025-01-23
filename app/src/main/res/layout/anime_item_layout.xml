@@ -13,7 +13,7 @@
     android:backgroundTint="@color/grey"
     app:cardCornerRadius="@dimen/_dp10"
     android:elevation="@dimen/_dp3"
-    android:layout_marginTop="@dimen/_dp30">
+    android:layout_marginTop="@dimen/_dp24">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:id="@+id/poster_id"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_dp280"
-            android:background="@color/black"
+            android:background="@drawable/drawable_box_with_border"
             android:contentDescription="@string/anime_image"
             app:layout_constraintTop_toTopOf="parent"
             animePoster = "@{anime.images.jpg.image_url}"/>
@@ -63,6 +63,7 @@
             android:layout_marginTop="@dimen/_dp10"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:drawablePadding="@dimen/_dp5"
             android:textSize="@dimen/_sp16"
             animeScore="@{anime.score}"
             />

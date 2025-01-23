@@ -2,4 +2,6 @@
     <string name="app_name">AnimePlayer</string>
     <string name="anime_image">anime image</string>
     <string name="plot_synopsis">Plot/Synopsis :</string>
+    <string name="fav_animes_headline">Your favourite Animes</string>
+    <string name="error_message">Oops Something went wrong!</string>
 </resources>

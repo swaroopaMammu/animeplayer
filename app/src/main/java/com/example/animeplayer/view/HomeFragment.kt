@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import com.example.animeplayer.R
 import com.example.animeplayer.databinding.FragmentHomeBinding
 import com.example.animeplayer.view.adapter.AnimeListAdapter
 import com.example.animeplayer.viewModel.HomeViewModel
@@ -23,6 +25,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         homeBinding = FragmentHomeBinding.inflate(inflater,container,false)
+        homeBinding.error = false
+        homeBinding.appbar.headline = getString(R.string.fav_animes_headline)
         adapter = AnimeListAdapter(emptyList()) { data ->
             val action = HomeFragmentDirections.actionHomeFragmentToDetailFragmnet(data)
             findNavController().navigate(action)
@@ -36,7 +40,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.animeList.observe(viewLifecycleOwner){ data ->
-            adapter.setData(data)
+            homeBinding.progressbar.isVisible = false
+            if(data.isEmpty()){
+                homeBinding.error = true
+            }else{
+                adapter.setData(data)
+            }
         }
     }
 

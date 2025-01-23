@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.animeplayer.databinding.FragmentDetailFragmnetBinding
 import com.example.animeplayer.viewModel.DetailFragmentViewModel
@@ -44,10 +46,13 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         detailBinding.anime = viewModel.animeDetail
+        detailBinding.appbar.headline = viewModel.animeDetail.title
+        detailBinding.appbar.backpress.isVisible = true
 
         detailBinding.youtubePlayer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 super.onReady(youTubePlayer)
+                detailBinding.progressbar.isVisible = false
                     viewModel.animeDetail.trailer?.youtube_id?.let {
                         if(savedInstanceState != null && savedInstanceState.getBoolean(IS_PLAYING)){
                             youTubePlayer.loadVideo(it,viewModel.playbackPosition)
@@ -71,6 +76,10 @@ class DetailFragment : Fragment() {
             }
 
         })
+
+        detailBinding.appbar.backpress.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
     }
 }

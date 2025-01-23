@@ -2,15 +2,44 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="error"
+            type="boolean" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".view.HomeFragment">
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar_layout"
+        />
+    <TextView
+        android:id="@+id/error_id"
+        android:gravity="center"
+        android:visibility="gone"
+        isVisible="@{error}"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/error_message"/>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/animeListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        isVisible="@{!error}"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
