@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.animeplayer.view.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragmnet"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.animeplayer.view.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="animeDetailsData"
+            app:argType="com.example.animeplayer.model.AnimeData"
+            />
+    </fragment>
+</navigation>

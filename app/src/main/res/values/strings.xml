@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AnimePlayer</string>
+    <string name="anime_image">anime image</string>
+    <string name="plot_synopsis">Plot/Synopsis :</string>
+</resources>
