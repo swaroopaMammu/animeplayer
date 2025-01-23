@@ -21,6 +21,11 @@ fun TextView.setEpisodes(value:Int?){
     this.text = "Episodes : ${value?:0}"
 }
 
+@BindingAdapter("animeScore")
+fun TextView.setScore(value:Float){
+    this.text = "Score : ${value}"
+}
+
 @BindingAdapter("animeRating")
 fun TextView.setRating(value:String){
     this.text = "Rating : $value"

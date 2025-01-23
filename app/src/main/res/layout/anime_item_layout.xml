@@ -9,61 +9,74 @@
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="20dp"
+    android:layout_marginHorizontal="@dimen/_dp20"
     android:backgroundTint="@color/grey"
-    app:cardCornerRadius="10dp"
-    android:elevation="3dp"
-    android:layout_marginTop="30dp">
+    app:cardCornerRadius="@dimen/_dp10"
+    android:elevation="@dimen/_dp3"
+    android:layout_marginTop="@dimen/_dp30">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="10dp">
+        android:layout_marginHorizontal="@dimen/_dp10"
+        android:layout_marginVertical="@dimen/_dp10">
         <ImageView
             android:id="@+id/poster_id"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="@dimen/_dp280"
             android:background="@color/black"
             android:contentDescription="@string/anime_image"
             app:layout_constraintTop_toTopOf="parent"
             animePoster = "@{anime.images.jpg.image_url}"/>
         <TextView
             android:id="@+id/title_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/poster_id"
-            android:layout_marginTop="10dp"
-            android:textSize="16sp"
+            android:layout_marginTop="@dimen/_dp10"
+            android:textSize="@dimen/_sp16"
             animeTitle="@{anime.title}"
             />
         <TextView
             android:id="@+id/no_episodes_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_id"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             animeEpisodes="@{anime.episodes}"
             />
         <TextView
-            android:id="@+id/rating_id"
-            android:layout_width="0dp"
+            android:id="@+id/score_id"
+            android:layout_width="@dimen/_dp0"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/no_episodes_id"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
+            animeScore="@{anime.score}"
+            />
+        <TextView
+            android:id="@+id/rating_id"
+            android:layout_width="@dimen/_dp0"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/score_id"
+            android:layout_marginTop="@dimen/_dp10"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_sp16"
             animeRating="@{anime.rating}"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

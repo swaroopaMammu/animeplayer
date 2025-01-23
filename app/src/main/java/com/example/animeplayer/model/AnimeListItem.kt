@@ -17,7 +17,8 @@ data class AnimeData(
     val rating : String?,
     val synopsis:String?,
     val genres :List<Genre>,
-    val producers: List<Producer>
+    val producers: List<Producer>,
+    val score:Float
 ):Parcelable
 
 @Parcelize

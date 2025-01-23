@@ -10,58 +10,61 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingVertical="@dimen/_dp10"
+    android:paddingHorizontal="@dimen/_dp5"
     android:background="@color/black">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey"
-        android:layout_margin="5dp"
         tools:context=".view.DetailFragment">
         <ImageView
             android:id="@+id/image_id"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="@dimen/_dp230"
             android:background="@color/black"
             android:visibility="gone"
             isVisible ="@{anime.trailer.youtube_id == null}"
             animePoster = "@{anime.images.jpg.image_url}"
             android:contentDescription="@string/anime_image"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+           />
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/youtubePlayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             isVisible ="@{anime.trailer.youtube_id != null}"
-            app:layout_constraintTop_toBottomOf="@+id/image_id"/>
+            app:layout_constraintTop_toBottomOf="@+id/image_id"
+            />
         <View
             android:id="@+id/gap_id"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="@dimen/_dp20"
             android:background="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/youtubePlayer"
             app:layout_constraintBottom_toTopOf="@+id/title_id"/>
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp20"
             android:id="@+id/title_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             animeTitle="@{anime.title}"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             app:layout_constraintTop_toBottomOf="@+id/gap_id"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
             android:id="@+id/episode_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             animeEpisodes="@{anime.episodes}"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/title_id"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,12 +73,12 @@
         <TextView
             android:id="@+id/rating_id"
             animeRating="@{anime.rating}"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
+            android:layout_marginTop="@dimen/_dp10"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -83,59 +86,58 @@
             app:layout_constraintTop_toBottomOf="@+id/episode_id" />
 
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
             android:id="@+id/genre_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             animeGenre="@{anime.genres}"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/rating_id"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
             android:id="@+id/main_cast_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             animeProducers="@{anime.producers}"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/genre_id"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
             android:id="@+id/plot_text_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             android:text="@string/plot_synopsis"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/_sp16"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_dp10"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/main_cast_id"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/_dp10"
             android:id="@+id/plot_id"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_dp0"
             android:text="@{anime.synopsis}"
             android:textStyle="bold"
-            android:textSize="12sp"
+            android:textSize="@dimen/_sp12"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/plot_text_id"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginVertical="@dimen/_dp10"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </layout>
