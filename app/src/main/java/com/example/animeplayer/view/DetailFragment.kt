@@ -53,13 +53,13 @@ class DetailFragment : Fragment() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 super.onReady(youTubePlayer)
                 detailBinding.progressbar.isVisible = false
-                    viewModel.animeDetail.trailer?.youtube_id?.let {
-                        if(savedInstanceState != null && savedInstanceState.getBoolean(IS_PLAYING)){
-                            youTubePlayer.loadVideo(it,viewModel.playbackPosition)
-                        }else{
-                            youTubePlayer.cueVideo(it,viewModel.playbackPosition)
-                        }
+                viewModel.animeDetail.trailer?.youtube_id?.let {
+                    if (savedInstanceState != null && savedInstanceState.getBoolean(IS_PLAYING)) {
+                        youTubePlayer.loadVideo(it, viewModel.playbackPosition)
+                    } else {
+                        youTubePlayer.cueVideo(it, viewModel.playbackPosition)
                     }
+                }
 
             }
             override fun onStateChange(
