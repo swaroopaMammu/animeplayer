@@ -4,9 +4,9 @@ import com.example.animeplayer.model.AnimeData
 import com.example.animeplayer.model.ApiService
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val api: ApiService) {
+class Repository @Inject constructor(private val api: ApiService):RepositoryIf {
 
-   suspend fun getAnimeList(): List<AnimeData> {
+   override suspend fun getAnimeList(): List<AnimeData> {
             try {
                 val result = api.getAnimeList()
                 return result.data

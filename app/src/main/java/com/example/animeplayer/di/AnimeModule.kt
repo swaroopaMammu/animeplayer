@@ -1,7 +1,6 @@
 package com.example.animeplayer.di
 
 import com.example.animeplayer.model.ApiService
-import com.example.animeplayer.model.reprository.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
