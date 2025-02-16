@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.animeplayer.model.AnimeData
-import com.example.animeplayer.model.NetworkClient
+import com.example.animeplayer.model.reprository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val repo:Repository ) : ViewModel() {
 
     private val _animeList = MutableLiveData<List<AnimeData>>()
     val animeList : LiveData<List<AnimeData>> get() = _animeList
@@ -16,8 +19,8 @@ class HomeViewModel : ViewModel() {
     fun getAnimeList(){
         viewModelScope.launch{
             try {
-                val result = NetworkClient.apiService.getAnimeList()
-                _animeList.postValue(result.data)
+                val result = repo.getAnimeList()
+                _animeList.postValue(result)
             }catch (e:Exception){
                 _animeList.postValue(emptyList())
                 println("something went wrong")

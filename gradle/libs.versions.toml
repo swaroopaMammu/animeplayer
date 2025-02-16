@@ -22,6 +22,8 @@ glide = "5.0.0-rc01"
 compiler = "5.0.0-rc01"
 navigationSafeArgsGradlePlugin = "2.8.5"
 core = "12.1.1"
+hiltAndroid = "2.55"
+hiltAndroidCompiler = "2.55"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +47,8 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "compiler" }
 androidx-navigation-safe-args-gradle-plugin = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePlugin" }
 core = { group = "com.pierfrancescosoffritti.androidyoutubeplayer", name = "core", version.ref = "core" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

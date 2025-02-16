@@ -10,9 +10,13 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.animeplayer.R
 import com.example.animeplayer.databinding.FragmentHomeBinding
+import com.example.animeplayer.model.AnimeData
 import com.example.animeplayer.view.adapter.AnimeListAdapter
 import com.example.animeplayer.viewModel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var homeBinding: FragmentHomeBinding
